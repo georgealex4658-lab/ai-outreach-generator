@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Outreach Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: #0f0f0f;
+            color: #ffffff;
+        }
+        h1 {
+            color: #6366f1;
+            text-align: center;
+        }
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            background: #1a1a1a;
+            border: 1px solid #6366f1;
+            border-radius: 6px;
+            color: #ffffff;
+            font-size: 16px;
+        }
+        button {
+            width: 100%;
+            padding: 14px;
+            margin-top: 16px;
+            background: #6366f1;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #4f46e5;
+        }
+        .messages {
+            margin-top: 40px;
+            background: #1a1a1a;
+            padding: 24px;
+            border-radius: 8px;
+            border: 1px solid #6366f1;
+            white-space: pre-wrap;
+            line-height: 1.8;
+        }
+        .messages h2 {
+            color: #6366f1;
+        }
+    </style>
+</head>
+<body>
+    <h1>AI Outreach Generator</h1>
+
+    <form action="/generate" method="POST">
+        <input type="text" name="name" placeholder="Prospect Name" required>
+        <input type="text" name="business" placeholder="Business Name" required>
+        <input type="text" name="city" placeholder="City" required>
+        <button type="submit">Generate Messages</button>
+    </form>
+
+    {% if messages %}
+    <div class="messages">
+        <h2>Your AI Generated Messages for {{ name }}</h2>
+        {{ messages }}
+    </div>
+    {% endif %}
+
+</body>
+</html>
