@@ -1,4 +1,7 @@
 flask
 anthropic
+flask
+anthropic
 python-dotenv
 requests
+gunicorn
